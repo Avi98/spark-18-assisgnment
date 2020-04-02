@@ -7,7 +7,7 @@ const Container = styled.div`
   justify-content: space-between;
   align-items:center;
   justify-items:center;
-  padding: 5% 30%;
+  padding: 10% 21%;
 `
 
 
