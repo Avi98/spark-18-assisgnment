@@ -53,8 +53,6 @@ const initialState: any = {
 export function country(state = initialState, action: any) {
   switch (action.type) {
     case 'SELECT_CITIES':
-      //  const country= 
-      debugger
 
       return {
         ...state,
@@ -66,12 +64,13 @@ export function country(state = initialState, action: any) {
               ...state.country[action.country].cities,
               [action.id]: {
                 ...state.country[action.country].cities[action.id],
-                checked: true
+                checked: action.checked
               }
             }
           }
         }
       }
+
 
     default:
       return state

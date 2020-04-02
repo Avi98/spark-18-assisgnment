@@ -36,8 +36,10 @@ const mapStateToProps = ({ country, selectCites }: any) => ({ country, selectCit
 
 export default connect(mapStateToProps, { selectCities })((props: any) => {
     const classes = useStyles();
-    const handleChange = (country: any, id: any) => (_: any) => {
-        props.selectCities(id, country)
+    const handleChange = (country: any, id: any) => (e: any) => {
+            props.selectCities(id, country, e.target.checked)
+        
+
     };
     return <Card className={classes.root}>{Object.keys(props.country).map(country => <CountryContainer key={country}><h1>{country}</h1>{
         Object.values(props.country[country].cities).map((obj: any) => {
