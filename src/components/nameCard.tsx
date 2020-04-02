@@ -3,6 +3,8 @@ import Card from '@material-ui/core/Card';
 import { makeStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+
+import { selectCities } from '../redux/actions'
 import { FormControlLabel, Checkbox } from '@material-ui/core';
 
 const CountryContainer = styled.div`
@@ -30,14 +32,14 @@ const useStyles = makeStyles({
     },
 });
 
-const mapStateToProps = ({country}: any) => ({country})
+const mapStateToProps = ({ country, selectCites }: any) => ({ country, selectCites })
 
-export default connect(mapStateToProps)((props: any) => {
+export default connect(mapStateToProps, { selectCities })((props: any) => {
     const classes = useStyles();
-    const handleChange = (country:any,name:any) => (event:any) => {
-        debugger
-        // setState({ ...state, [name]: event.target.checked });
-      };
+    const handleChange = (country: any, id: any) => (_: any) => {
+        const cities = props.country[country].cities.filter((obj: any) => obj.id === id)[0]
+        props.selectCities({ selectCites: { ...cities, country } })
+    };
     return <Card className={classes.root}>{Object.keys(props.country).map(country => <CountryContainer key={country}><h1>{country}</h1>{
         props.country[country].cities.map((obj: any) => {
             return (
