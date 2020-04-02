@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header, NameCard } from "./components";
+import { Header, NameCard,SelectedCard } from "./components";
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -18,7 +18,7 @@ class App extends Component {
         <Header />
         <Container>
           <NameCard />
-          <NameCard />
+          <SelectedCard />
         </Container>
       </div>
     );

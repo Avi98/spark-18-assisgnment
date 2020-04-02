@@ -36,30 +36,10 @@ const mapStateToProps = ({ country, selectCites }: any) => ({ country, selectCit
 
 export default connect(mapStateToProps, { selectCities })((props: any) => {
     const classes = useStyles();
-    const handleChange = (country: any, id: any) => (_: any) => {
-        props.selectCities(id, country)
+    const handleChange = (country: any, id: any) => (event: any) => {
+
+        props.selectCities(id)
     };
-    return <Card className={classes.root}>{Object.keys(props.country).map(country => <CountryContainer key={country}><h1>{country}</h1>{
-        Object.values(props.country[country].cities).map((obj: any) => {
-            return (
-                <FormControlLabel
-                    key={obj.id}
-                    control={
-                        <Checkbox
-                            checked={obj.checked}
-                            onChange={handleChange(country, obj.id)}
-                            value={obj.id}
-                            color="primary"
-                        />
-                    }
-                    label={obj.name}
-                />
-            )
-        }
-        )
-    }
-    </CountryContainer>
-    )
-    }
+    return <Card className={classes.root}>
     </Card>
 })

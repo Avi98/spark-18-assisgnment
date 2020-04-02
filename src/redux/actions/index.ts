@@ -1,7 +1,7 @@
-export const selectCities = (data:any) =>{
+export const selectCities = (id:any, country:any) =>{
     debugger
     return{
         type: 'SELECT_CITIES',
-        data
+        id,country
     }
 }
