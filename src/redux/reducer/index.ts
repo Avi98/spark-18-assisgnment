@@ -1,7 +1,7 @@
 // import { VisibilityFilters } from './actions'
 
 const initialState: any = {
-  portugal: {
+  country:{portugal: {
     name: 'portugal',
     cities: [{
       id:1,
@@ -40,13 +40,13 @@ const initialState: any = {
       name: 'asyask jyawanst',
       checked: false
     }]
-  }
+  }}
 }
 
 export function country(state = initialState, action: any) {
-  //   if (typeof state === 'undefined') {
-  //     return initialState
-  //   }
+    if (typeof state === 'undefined') {
+      return initialState
+    }
 
   return initialState
 }

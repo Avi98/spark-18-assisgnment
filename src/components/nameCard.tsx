@@ -30,11 +30,8 @@ const useStyles = makeStyles({
     },
 });
 
-const mapStateToProps = (store: any) => {
-    return {
-        country: store
-    }
-}
+const mapStateToProps = ({country}: any) => ({country})
+
 export default connect(mapStateToProps)((props: any) => {
     const classes = useStyles();
     const handleChange = (country:any,name:any) => (event:any) => {
