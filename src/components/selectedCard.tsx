@@ -61,10 +61,10 @@ export default connect(mapStateToProps, { selectCities })((props: any) => {
     const checkedPortugalCities = Object.values(props.country.portugal.cities).filter((obj: any) => obj.checked)
 
     return <Card className={classes.root}>
-        <CountryContainer ><h1>Portugal</h1>
+        <CountryContainer >{checkedPortugalCities.length >0 &&<h1>Portugal</h1>}
             {checkedPortugalCities.map((obj: any) => <CheckedCities><p>{obj.name}</p> <div className="icon" onClick={handleChange('portugal', obj.id)}>X</div></CheckedCities>)}
         </CountryContainer>
-        <CountryContainer ><h1>Nicaragua</h1>
+        <CountryContainer >{checkedNicaraguaCities.length >0 &&<h1>Nicaragua</h1>}
             {checkedNicaraguaCities.map((obj: any) => <CheckedCities><p>{obj.name}</p> <div className="icon" onClick={handleChange('nicaragua', obj.id)}>X</div></CheckedCities>)}
         </CountryContainer>
     </Card>
