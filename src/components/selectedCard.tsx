@@ -22,7 +22,7 @@ const CheckedCities = styled.div`
     border-radius: 7px;
     width: 250px;
     padding: 0px 23px;
-    margin: 20px 0;
+    margin: 10px 0;
     .icon{
         color:#8d8d90;
         cursor: pointer;
